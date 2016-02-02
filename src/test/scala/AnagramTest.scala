@@ -2,7 +2,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import org.scalatest.{BeforeAndAfter, FunSuite}
 
 /**
- * Created by Nagendra on 10/23/15.
+ * Created by Nagendra Amalakanta on 02/02/16.
  */
 class AnagramTest extends FunSuite with BeforeAndAfter {
 
@@ -21,7 +21,7 @@ class AnagramTest extends FunSuite with BeforeAndAfter {
     val anagrams =  Anagram.collectAnagrams(sc.textFile(getClass.getClassLoader.getResource("word_count_input.txt").getPath))
 
     // @@ VERIFY
-    assert(anagrams.collect().toSet.size == 2)
-    assert(anagrams.collect().toSet == Set("Turning","Tunring"))
+    assert(anagrams.collect().toSet.size == 1)
+    assert(anagrams.collect().toSet == Set("Tunring","Tunring"))
   }
 }
