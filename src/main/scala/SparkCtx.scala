@@ -7,4 +7,7 @@ object SparkCtx {
 
     val sc = new SparkContext(new SparkConf().setAppName("test").setMaster("local[*]"));
 
+    def holdSparkContext(timePeriod : Int): Unit = {
+      Thread.sleep(timePeriod)
+    }
 }
