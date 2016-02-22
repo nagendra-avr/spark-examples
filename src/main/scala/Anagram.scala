@@ -3,9 +3,9 @@ import org.apache.spark.rdd.RDD
 /**
  * Created by Nagendra on 10/23/15.
  */
-class Anagram(name:String) extends Serializable {
+object Anagram {
 
-  def collectAnagrams(rdd : RDD[String]): RDD[String] = {
+  def collectAnagrams(name:String,rdd : RDD[String]): RDD[String] = {
 
     return rdd.flatMap(line => line.split("\\s+")).filter(x=>verifyAnagrams(x,name));
   }
